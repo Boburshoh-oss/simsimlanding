@@ -1,0 +1,262 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %} {% block content %}
+
+<!-- Header Start -->
+
+<header class="navigation">
+  <div class="header-top">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-lg-2 col-md-4">
+          <div class="header-top-socials text-center text-lg-left text-md-left">
+            <a href="https://github.com/Boburshoh-oss/" target="_blank"
+              ><i class="ti-github"></i
+            ></a>
+          </div>
+        </div>
+        <div class="col-lg-10 col-md-8 text-center text-lg-right text-md-right">
+          <div class="header-top-info">
+            <a href="tel:+998979407404">Call Us : <span>+998979407404</span></a>
+            <a href="mailto:boburbekbotirov868@gmail.com"
+              ><i class="fa fa-envelope mr-2"></i
+              ><span>boburbekbotirov868@gmail.com</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg py-4" id="navbar">
+    <div class="container">
+      {% comment %}
+      <a class="navbar-brand" href="index.html"> SimSim<span>IT.</span> </a>
+      {% endcomment %}
+      <img
+        src="{% static 'images/logo white_new.png' %}"
+        alt="logo"
+        class="img-fluid"
+        style="width: 5%; height: auto"
+      />
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExample09"
+        aria-controls="navbarsExample09"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="fa fa-bars"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navbarsExample09">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'project' %}"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          {% comment %}
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="dropdown03"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >About</a
+            >
+            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+              <li>
+                <a class="dropdown-item" href="about.html">Our company</a>
+              </li>
+              <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="service.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="project.html">Portfolio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="dropdown05"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Blog</a
+            >
+            <ul class="dropdown-menu" aria-labelledby="dropdown05">
+              <li>
+                <a class="dropdown-item" href="blog-grid.html">Blog Grid</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="blog-sidebar.html"
+                  >Blog with Sidebar</a
+                >
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="blog-single.html">Blog Single</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          {% endcomment %}
+        </ul>
+
+        <form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
+          <a
+            href="https://t.me/Boburbek_Botirov"
+            class="btn btn-solid-border btn-round-full"
+            >Get a Quote</a
+          >
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Header Close -->
+
+<div class="main-wrapper">
+  <section class="page-title bg-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="block text-center">
+            <span class="text-white">News details</span>
+            <h1 class="text-capitalize mb-4 text-lg">About Project</h1>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="index.html" class="text-white">Home</a>
+              </li>
+              <li class="list-inline-item">
+                <span class="text-white">/</span>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-white-50">News details</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section blog-wrap bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-lg-12 mb-5">
+              <div class="single-blog-item">
+                <img
+                  src="{{ project.image.url }}"
+                  alt=""
+                  class="img-fluid rounded"
+                />
+
+                <div class="blog-item-content bg-white p-5">
+                  <div class="blog-item-meta bg-gray py-1 px-2">
+                    <span class="text-muted text-capitalize mr-3"
+                      ><i class="ti-pencil-alt mr-2"></i>Creativity</span
+                    >
+                    <span class="text-muted text-capitalize mr-3"
+                      ><i class="ti-comment mr-2"></i>5 Comments</span
+                    >
+                    <span class="text-black text-capitalize mr-3"
+                      ><i class="ti-time mr-1"></i> 28th January</span
+                    >
+                  </div>
+
+                  <h2 class="mt-3 mb-4">
+                    <a href="blog-single.html">{{ project.title }}</a>
+                  </h2>
+                  <p class="lead mb-4">{{ project.description }}</p>
+                  {% if project.image2 %}
+                  <img
+                    src="{{ project.image2.url }}"
+                    alt=""
+                    class="img-fluid rounded"
+                  />
+                  {% endif %}
+                  <h3 class="quote">
+                    A brand for a company is like a reputation for a person. You
+                    earn reputation by trying to do hard things well.
+                  </h3>
+                  {% if project.image3 %}
+                  <img
+                    src="{{ project.image3.url }}"
+                    alt=""
+                    class="img-fluid rounded"
+                  />
+                  {% endif %}
+                  <p class="lead mb-4 font-weight-normal text-black">
+                    The same is true as we experience the emotional sensation of
+                    stress from our first instances of social rejection
+                    ridicule. We quickly learn to fear and thus automatically.
+                  </p>
+                  {% if project.image4 %}
+                  <img
+                    src="{{ project.image4.url }}"
+                    alt=""
+                    class="img-fluid rounded"
+                  />
+                  {% endif %}
+                  <div class="tag-option mt-5 clearfix">
+                    <ul class="float-left list-inline">
+                      <li>Tags:</li>
+                      <li class="list-inline-item">
+                        <a href="#" rel="tag">Advancher</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" rel="tag">Landscape</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" rel="tag">Travel</a>
+                      </li>
+                    </ul>
+
+                    {% comment %}
+                    <ul class="float-right list-inline">
+                      <li class="list-inline-item">Share:</li>
+                      <li class="list-inline-item">
+                        <a href="#" target="_blank"
+                          ><i class="fab fa-facebook-f" aria-hidden="true"></i
+                        ></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" target="_blank"
+                          ><i class="fab fa-twitter" aria-hidden="true"></i
+                        ></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" target="_blank"
+                          ><i class="fab fa-pinterest-p" aria-hidden="true"></i
+                        ></a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="#" target="_blank"
+                          ><i class="fab fa-google-plus" aria-hidden="true"></i
+                        ></a>
+                      </li>
+                    </ul>
+                    {% endcomment %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}
