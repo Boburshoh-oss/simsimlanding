@@ -24,9 +24,9 @@ services:
     environment:
       - REDIS_HOST=redis
     ports:
-      - 8000:8000
+      - 8001:8000
     expose:
-      - 8000
+      - 8001
     volumes:
       - static_volume:/code/backend/staticfiles
       - media_volume:/code/backend/media
